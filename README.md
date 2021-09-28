@@ -1,1 +1,1 @@
-# Uformer_Demo
+Demo of Uformer: A Unet based dilated complex real dual-path conformer network for simultaneous speech enhancement and dereverberation

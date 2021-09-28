@@ -1,1 +1,108 @@
-123
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Uformer: A Unet based dilated complex real dual-path conformer network for simultaneous speech enhancement and dereverberation </title>
+    <link rel="stylesheet" type="text/css" href="../../stylesheet.css"/>
+  </head>
+  <body>
+    <article>
+      <header>
+	  <p></p><font size="3" color="red">To make sure the correct format and representation of audios and pictures, we suggest you to open this website by chrome.</font></div>
+        <div style="text-align:center"><h1>A Unet based dilated complex real dual-path conformer network for simultaneous speech enhancement and dereverberation</h1>
+		<div size="3" style="text-align:center"><h1>Yihui Fu, Yun Liu, Jingdong Li, Dawei Luo, Shubo Lv, Yukai Jv, Lei Xie</h1>
+      </header>
+    </article>
+    <!-- <div><b>Paper:</b> <a href="https://www.baidu.com">arXiv</a> <a href="http://www.baidu.com">ICASSP 2019</a></div> -->
+	<div style="margin-right: auto;margin-left: auto; margin-top: 30px; margin-bottom: 100px; width: 70%;"deep="0">
+    <div><b>Abstract:</b> Magnitude and complex spectrum are recognized as being two major features of speech enhancement and dereverberation. Traditionally, the focus has always been treating these two features as two different parts, ignoring their underlying relationship. In this paper, we propose Uformer, a Unet based dilated complex  real dual-path conformer network in both complex and magnitude domain for simultaneous speech enhancement and dereverberation. We exploit time attention (TA) and dilated convolution (DC) to leverage local and global contextual information and frequency attention (FA) to model dimensional information. These three modules contained in the proposed dilated complex  real dual-path conformer module effectively improve the speech enhancement and dereverberation performance. Furthermore, hybrid encoder and decoder are adopted to simultaneously model the complex spectrum and magnitude and promote the information interaction between two domains. Encoder decoder attention is also applied to enhance the interaction between encoder and decoder. Our experimental results outperform all SOTA time domain and complex domain speech front-end models on both objective and subjective performance. Specifically, the proposed method reaches 3.6032 DNSMOS on the blind test set of Interspeech 2021 DNS Challenge. We also carry out ablation experiments to tease apart the proposed modules that are most important. </div>
+    <br></br>
+	<div><b><font size="4">Uformer Architecture:</b>
+    <br><div align="center"><img src="architecture.png" width="552" height="631" /></div> </br>
+    <br></br>
+    <div><b>Samples:</b>
+	
+    <div>
+      <hr align="left" width="93%" />
+      <table>
+	  <font size="3">Noisy  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+	  <font size="3"><b>Proposed Uformer</b> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp 
+	  <font size="3">Proposed Uformer(Causal) &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+	  <p></p>
+                  <font size="3">Uformer without FA &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                  <font size="3">Uformer without  DC &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                  <font size="3">Uformer without  encoder decoder attention &nbsp &nbsp   
+                  <font size="3">Uformer without real valued sub-modules 
+	  <p></p>
+                  <font size="3">DCCRN &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp
+	  <font size="3">DCCRN+ &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp
+	  <font size="3">SDD-Net &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+      </table>
+    </div>
+    <div>
+      <hr align="left" width="93%" />
+      <table>Utterance 1 (Stable noise and laughter)
+        <tr ><td><audio controls><source src="noisy/1.wav"></audio><audio controls><source src="uformer/1.wav"></audio><audio controls><source src="uformer_causal/1.wav"></audio>
+
+		<br><img src="noisy/1.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="uformer/1.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="uformer_causal/1.png" width="241" height="155" /></br>
+
+		<tr ><td><audio controls><source src="uformer-FA/1.wav"></audio><audio controls><source src="uformer-DC/1.wav"></audio><audio controls><source src="uformer-att/1.wav"></audio><audio controls><source src="uformer-real/1.wav"></audio><p></p>
+
+		<br><img src="uformer-FA/1.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="uformer-DC/1.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="uformer-att/1.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="uformer-real/1.png" width="241" height="155" /></br></td></tr>
+
+		<tr ><td><audio controls><source src="dccrn/1.wav"></audio><audio controls><source src="dccrn_plus/1.wav"></audio><audio controls><source src="sddnet/1.wav"></audio>
+
+		<br><img src="dccrn/1.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="dccrn_plus/1.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="sddnet/1.png" width="241" height="155" /></br>
+      </table>
+    </div>
+    <div>
+      <hr align="left" width="93%" />
+      <table>Utterance 2 (Stable and sudden noise)
+        <tr ><td><audio controls><source src="noisy/2.wav"></audio><audio controls><source src="uformer/2.wav"></audio><audio controls><source src="uformer_causal/2.wav"></audio>
+
+		<br><img src="noisy/2.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="uformer/2.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="uformer_causal/2.png" width="241" height="155" /></br>
+
+		<tr ><td><audio controls><source src="uformer-FA/2.wav"></audio><audio controls><source src="uformer-DC/2.wav"></audio><audio controls><source src="uformer-att/2.wav"></audio><audio controls><source src="uformer-real/2.wav"></audio><p></p>
+
+		<br><img src="uformer-FA/2.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="uformer-DC/2.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="uformer-att/2.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="uformer-real/2.png" width="241" height="155" /></br></td></tr>
+
+		<tr ><td><audio controls><source src="dccrn/2.wav"></audio><audio controls><source src="dccrn_plus/2.wav"></audio><audio controls><source src="sddnet/2.wav"></audio>
+
+		<br><img src="dccrn/2.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="dccrn_plus/2.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="sddnet/2.png" width="241" height="155" /></br>
+      </table>
+    </div>
+    <div>
+      <hr align="left" width="93%" />
+      <table>Utterance 3 (Stable and sudden noise)
+        <tr ><td><audio controls><source src="noisy/3.wav"></audio><audio controls><source src="uformer/3.wav"></audio><audio controls><source src="uformer_causal/3.wav"></audio>
+
+		<br><img src="noisy/3.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="uformer/3.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="uformer_causal/3.png" width="241" height="155" /></br>
+
+		<tr ><td><audio controls><source src="uformer-FA/3.wav"></audio><audio controls><source src="uformer-DC/3.wav"></audio><audio controls><source src="uformer-att/3.wav"></audio><audio controls><source src="uformer-real/3.wav"></audio><p></p>
+
+		<br><img src="uformer-FA/3.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="uformer-DC/3.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="uformer-att/3.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="uformer-real/3.png" width="241" height="155" /></br></td></tr>
+
+		<tr ><td><audio controls><source src="dccrn/3.wav"></audio><audio controls><source src="dccrn_plus/3.wav"></audio><audio controls><source src="sddnet/3.wav"></audio>
+
+		<br><img src="dccrn/3.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="dccrn_plus/3.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="sddnet/3.png" width="241" height="155" /></br>
+      </table>
+    </div>
+<div>
+      <hr align="left" width="93%" />
+      <table>Utterance 4 (Reverberation)
+        <tr ><td><audio controls><source src="noisy/4.wav"></audio><audio controls><source src="uformer/4.wav"></audio><audio controls><source src="uformer_causal/4.wav"></audio>
+
+		<br><img src="noisy/4.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="uformer/4.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="uformer_causal/4.png" width="241" height="155" /></br>
+
+		<tr ><td><audio controls><source src="uformer-FA/4.wav"></audio><audio controls><source src="uformer-DC/4.wav"></audio><audio controls><source src="uformer-att/4.wav"></audio><audio controls><source src="uformer-real/4.wav"></audio><p></p>
+
+		<br><img src="uformer-FA/4.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="uformer-DC/4.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="uformer-att/4.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="uformer-real/4.png" width="241" height="155" /></br></td></tr>
+
+		<tr ><td><audio controls><source src="dccrn/4.wav"></audio><audio controls><source src="dccrn_plus/4.wav"></audio><audio controls><source src="sddnet/4.wav"></audio>
+
+		<br><img src="dccrn/4.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="dccrn_plus/4.png" width="241" height="155" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="sddnet/4.png" width="241" height="155" /></br>
+      </table>
+    </div>
+	<hr align="left" width="93%" />
+    <br></br>
+	<div><b><font size="4">Experimental Results:</b>
+    <br><div align="center"><img src="results.png" width="560" height="434" /></div></br>
